@@ -1,0 +1,12 @@
+{
+  "name": "SuccessProject",
+  "version": "0.0.1",
+  "description": "Sample package.json",
+  "devDependencies": {
+    "cors-anywhere": "^0.4.1"
+  },
+  "scripts": {
+    "proxy": "node proxy.js"
+  },
+  "dependencies": {}
+}

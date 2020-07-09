@@ -1,0 +1,39 @@
+<mvc:View
+	controllerName="blueco.SuccessProject.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		title="{i18n>detailPageTitle}"
+		showNavButton="true"
+		navButtonPress=".onNavBack"
+		xmlns:wt="blueco.SuccessProject.control">
+		<ObjectHeader
+			responsive="true"
+			fullScreenOptimized="true"
+			number="{
+				parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
+				type: 'sap.ui.model.type.Currency',
+				formatOptions: {
+					showMeasure: false
+				}
+			}"
+			numberUnit="{view>/currency}"
+			title="{invoice>ProductName}" 
+			intro="{invoice>ShipperName}">
+			
+			<attributes>
+				<ObjectAttribute title="{i18n>quantityTitle}" text="{invoice>Quantity}"></ObjectAttribute>
+				<ObjectAttribute title="{i18n>dateTitle}" text="{
+					path: 'invoice>OrderDate',
+					type: 'sap.ui.model.type.Date',
+					formatOptions: {
+					  style: 'long',
+					  pattern: 'dd-MM-yyyy'
+					}
+				  }"/>
+			</attributes>
+		
+		</ObjectHeader>
+		<wt:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change=".onRatingChange"/>
+	</Page>
+</mvc:View>
